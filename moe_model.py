@@ -124,7 +124,7 @@ def run_moe_inference(user_input, model, threshold=0.5, top_k=1, verbose=True):
     # 判斷選用專家
     all_probs = [fke_prob.item()] + domain_probs[0].tolist()
     max_prob = max(all_probs)
-    fke_is_max = fke_prob.item() == max_prob
+    fke_is_max = fke_prob.item() >= max_prob - 1e-6   # 可能有浮點數的誤差
 
     # 防呆條件：如果四個模型機率都低於 threshold
     if max_prob < threshold and fke_is_max:
