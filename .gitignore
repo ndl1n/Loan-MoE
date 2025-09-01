@@ -3,3 +3,12 @@ dataset/*.xlsx
 
 # Ignore local settings
 *.env
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter / Colab checkpoints
+.ipynb_checkpoints/
